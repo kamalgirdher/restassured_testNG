@@ -65,17 +65,45 @@ public void test2() {
 ### Test 5. given()  get()  then() assertThat()  body(String path, ResponseAwareMatcher<R> responseAwareMatcher) 
 ```java
 	public void test5() {
-		//for java v1.7 or less we use ResponseAwareMatchers
+
+		/*
+		 * For Content-Type=application/json
+		 * for java v1.7 or less we use ResponseAwareMatchers
+		 */
 		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().body("lname",
 				new ResponseAwareMatcher<Response>() {
 					public Matcher<?> matcher(Response response) {
 						return equalTo("girdher");
 					}
 				});
-		
-		//for java v1.8 we use lambda expressions
+
+		/*
+		 * For Content-Type=application/json
+		 * for java v1.8 we use lambda expressions
+		 */
 		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().body("lname",
 				response -> equalTo("girdher"));
+		
+		
+		
+		/*
+		 * For Content-Type=application/xml
+		 * for java v1.7 or less we use ResponseAwareMatchers
+		 */
+		given().get("http://localhost:3000/get_200_OK_SimpleXML_Response").then().root("root").body("lname",
+				new ResponseAwareMatcher<Response>() {
+					public Matcher<?> matcher(Response response) {
+						return equalTo("girdher");
+					}
+				});
+		
+		/*
+		 * For Content-Type=application/xml
+		 * for java v1.8 we use lambda expressions
+		 */
+		given().get("http://localhost:3000/get_200_OK_SimpleXML_Response").then().root("root").body("lname",
+				response -> equalTo("girdher"));
+		
 	}
 ```
 
