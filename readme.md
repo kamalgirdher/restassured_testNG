@@ -29,6 +29,7 @@ public void test_getRequest() {
 ```
 
 ### Test 2. given()  get()  then()  statusCode(Matcher)
+> Note :  Use this import for equalsTo : import static org.hamcrest.CoreMatchers.equalsTo;
 ```java
 public void test2() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().statusCode(equalTo(200));
