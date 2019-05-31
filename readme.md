@@ -9,9 +9,6 @@ https://t.me/letsautomate
 REST Assured is a Java library that provides a domain-specific language (DSL) for writing powerful, maintainable tests for RESTful APIs.
 REST Assured can be used easily in combination with testing frameworks such as JUnit and TestNG. 
 
-## Eclipse project setup
-> to be updated
-
 ## Installation
 
  > Download and install Mockoon(https://mockoon.com) to mock services and practice extensively.
