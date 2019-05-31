@@ -14,6 +14,7 @@ REST Assured can be used easily in combination with testing frameworks such as J
  
 
 
+# GET
 
 ## Initial tests using RestAssured & TestNG
  > Open Test_requests.java in src/test/java/raw_tests_with_testng
