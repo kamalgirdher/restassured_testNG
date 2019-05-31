@@ -28,10 +28,11 @@ public void test_getRequest() {
 ```
 
 ### Test 2. given()  get()  then()  statusCode(Matcher)
+```java
 public void test2() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().statusCode(equalTo(200));
 	}
-
+```
 --------------------------------------------------------------------------------
 
 ### Test 3. given()  get()  then() assertThat() statusCode()
