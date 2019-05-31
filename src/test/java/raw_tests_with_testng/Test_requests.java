@@ -50,7 +50,7 @@ public class Test_requests {
 					}
 				});
 		
-		//for java v1.7 or less we use lambda expressions
+		//for java v1.8 we use lambda expressions
 		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().body("lname",
 				response -> equalTo("girdher"));
 	}
