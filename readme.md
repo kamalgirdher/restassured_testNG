@@ -1,3 +1,8 @@
+
+Subscribe on Youtube to master AUTOMATION.
+https://www.youtube.com/c/xtremeExcel
+
+
 ## What is RestAssured
 REST Assured is a Java library that provides a domain-specific language (DSL) for writing powerful, maintainable tests for RESTful APIs.
 REST Assured can be used easily in combination with testing frameworks such as JUnit and TestNG. 
@@ -55,9 +60,12 @@ public void test2() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().body(containsString("Operation"));
 	}
 ```
+> we can pass multiple matchers comma separated.
+
 
 ### Test 5. given()  get()  then() assertThat()  body(String path, ResponseAwareMatcher<R> responseAwareMatcher) 
 ```java
+
 ```
 
 ### Test 6. given()  get()  then() assertThat()  body(List<Argument> arguments, ResponseAwareMatcher<R> responseAwareMatcher) 

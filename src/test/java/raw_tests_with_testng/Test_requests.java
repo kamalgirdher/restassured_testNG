@@ -1,42 +1,45 @@
 package raw_tests_with_testng;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.equalTo;
 
 import org.testng.annotations.Test;
 
+import io.restassured.matcher.*;
+import io.restassured.response.Response;
+
 public class Test_requests {
-	
-	//### Test 1. given()  get()  then()  statusCode(int)
+
+	// ### Test 1. given() get() then() statusCode(int)
 	@Test
 	public void test1() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().statusCode(200);
 	}
-	
-	//### Test 2. given()  get()  then()  statusCode(Matcher)
+
+	// ### Test 2. given() get() then() statusCode(Matcher)
 	@Test
 	public void test2() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().statusCode(equalTo(200));
 	}
-	
-	
-	//### Test 3. given()  get()  then() assertThat() statusCode()
+
+	// ### Test 3. given() get() then() assertThat() statusCode()
 	@Test
 	public void test3() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().assertThat().statusCode(200);
 	}
-	
-	
-	//### Test 4. given()  get()  then() assertThat() body()  containsString()
+
+	// ### Test 4. given() get() then() assertThat() body() containsString()
 	@Test
 	public void test4() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().body(containsString("Operation"));
 	}
 
-	
-	//### Test 5. given()  get()  then() assertThat()  body(String path, ResponseAwareMatcher<R> responseAwareMatcher) 
+	// ### Test 5. given() get() then() assertThat() body(String path,
+	// ResponseAwareMatcher<R> responseAwareMatcher)
 	@Test
-	public void test5() {		
+	public void test5() {
+		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().body("fname", new ResponseAwareMatcher() {public Matcher matcher(Response response) { return equalTo("http://localhost:8080/" + response.path("userId"))}});
 	}
 		
 	//### Test 6. given()  get()  then() assertThat()  body(List<Argument> arguments, ResponseAwareMatcher<R> responseAwareMatcher) 
