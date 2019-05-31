@@ -8,5 +8,5 @@ public class Test_requests {
 	@Test
 	public void test_getRequest() {
 		given().get("http://localhost:3000/answer").then().statusCode(200);
-	}
+	}	
 }
