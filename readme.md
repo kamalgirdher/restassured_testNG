@@ -2,7 +2,8 @@
 REST Assured is a Java library that provides a domain-specific language (DSL) for writing powerful, maintainable tests for RESTful APIs.
 REST Assured can be used easily in combination with testing frameworks such as JUnit and TestNG. 
 
-
+## Eclipse project setup
+> to be updated
 
 ## Installation
 
@@ -46,7 +47,7 @@ public void test2() {
 ```
 --------------------------------------------------------------------------------
 
-### Test 4. given()  get()  then() assertThat() body()  containsString()
+### Test 4. given()  get()  then() assertThat() body(Matcher<?> matcher, Matcher<?>...additionalMatchers)
 
 > Note : Use this import for containsString : import static org.hamcrest.CoreMatchers.containsString;
 ```java
@@ -55,14 +56,36 @@ public void test2() {
 	}
 ```
 
-### Test 5. given()  get()  then() assertThat() body()  containsString()  and()
+### Test 5. given()  get()  then() assertThat()  body(String path, ResponseAwareMatcher<R> responseAwareMatcher) 
+
+
+### Test 6. given()  get()  then() assertThat()  body(List<Argument> arguments, ResponseAwareMatcher<R> responseAwareMatcher) 
+
+### Test 7. given()  get()  then() assertThat() body(String path, List<Argument> arguments, ResponseAwareMatcher<R> responseAwareMatcher)
+
+
+### Test 8. given()  get()  then() assertThat()  body(List<Argument> arguments, org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
+
+
+### Test 9. given()  get()  then() assertThat() body(String path, List<Argument> arguments,org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
+
+
+### Test 10. given()  get()  then() assertThat() body(String path, org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
+
+
+
+
+--------------------------------------------------------------------------------
+
+
+### Test 11. given()  get()  then() assertThat() body()  containsString()  and()
 ```java
 public void test4() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().body(containsString("Operation")).and().body(containsString("Successful"));
 	}
 ```
 
-### Test 6. given()  get()  then() assertThat() content
+### Test 12. given()  get()  then() assertThat() content
 
 
 e.g.  get("/something").then().assertThat().body(containsString("OK")).and().body(containsString("something else"));
