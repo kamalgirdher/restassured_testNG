@@ -1,10 +1,10 @@
-What is RestAssured
+## What is RestAssured
 REST Assured is a Java library that provides a domain-specific language (DSL) for writing powerful, maintainable tests for RESTful APIs.
 REST Assured can be used easily in combination with testing frameworks such as JUnit and TestNG. 
 
 
 
-Installation
+## Installation
 
  > Download and install Mockoon(https://mockoon.com) to mock services and practice extensively.
 
@@ -15,7 +15,7 @@ Installation
 
 
 
-Initial tests using RestAssured & TestNG
+## Initial tests using RestAssured & TestNG
  > Open Test_requests.java in src/test/java/raw_tests_with_testng
 
 ```java
@@ -27,7 +27,7 @@ public void test_getRequest() {
 
 
 
-What is RequestSpecBuilder
+## What is RequestSpecBuilder
 
 
 
