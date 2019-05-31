@@ -5,8 +5,11 @@ REST Assured can be used easily in combination with testing frameworks such as J
 
 
 Installation
+
  > Download and install Mockoon(https://mockoon.com) to mock services and practice extensively.
+
  > Create New environment in mockoon using mockoon_environment.json in the project.
+
  > Download and install Postman (chrome plugin or standalone)
  
 
