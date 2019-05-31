@@ -57,21 +57,31 @@ public void test2() {
 ```
 
 ### Test 5. given()  get()  then() assertThat()  body(String path, ResponseAwareMatcher<R> responseAwareMatcher) 
-
+```java
+```
 
 ### Test 6. given()  get()  then() assertThat()  body(List<Argument> arguments, ResponseAwareMatcher<R> responseAwareMatcher) 
+```java
+```
+
 
 ### Test 7. given()  get()  then() assertThat() body(String path, List<Argument> arguments, ResponseAwareMatcher<R> responseAwareMatcher)
-
+```java
+```
 
 ### Test 8. given()  get()  then() assertThat()  body(List<Argument> arguments, org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
+```java
+```
 
 
 ### Test 9. given()  get()  then() assertThat() body(String path, List<Argument> arguments,org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
+```java
+```
 
 
 ### Test 10. given()  get()  then() assertThat() body(String path, org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
-
+```java
+```
 
 
 
