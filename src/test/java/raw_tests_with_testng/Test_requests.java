@@ -1,12 +1,14 @@
 package raw_tests_with_testng;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.when;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
 
+import org.hamcrest.Matcher;
 import org.testng.annotations.Test;
 
-import io.restassured.matcher.*;
+import io.restassured.matcher.ResponseAwareMatcher;
 import io.restassured.response.Response;
 
 public class Test_requests {
@@ -35,51 +37,66 @@ public class Test_requests {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().body(containsString("Operation"));
 	}
 
+	
 	// ### Test 5. given() get() then() assertThat() body(String path,
 	// ResponseAwareMatcher<R> responseAwareMatcher)
 	@Test
 	public void test5() {
-		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().body("fname", new ResponseAwareMatcher() {public Matcher matcher(Response response) { return equalTo("http://localhost:8080/" + response.path("userId"))}});
-	}
+		//for java v1.7 or less we use ResponseAwareMatchers
+		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().body("lname",
+				new ResponseAwareMatcher<Response>() {
+					public Matcher<?> matcher(Response response) {
+						return equalTo("girdher");
+					}
+				});
 		
-	//### Test 6. given()  get()  then() assertThat()  body(List<Argument> arguments, ResponseAwareMatcher<R> responseAwareMatcher) 
-	@Test
-	public void test6() {		
+		//for java v1.7 or less we use lambda expressions
+		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().body("lname",
+				response -> equalTo("girdher"));
 	}
-	
-	//### Test 7. given()  get()  then() assertThat() body(String path, List<Argument> arguments, ResponseAwareMatcher<R> responseAwareMatcher)
+
+	// ### Test 6. given() get() then() assertThat() body(List<Argument> arguments,
+	// ResponseAwareMatcher<R> responseAwareMatcher)
 	@Test
-	public void test7() {		
+	public void test6() {
 	}
-	
-	//### Test 8. given()  get()  then() assertThat()  body(List<Argument> arguments, org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
+
+	// ### Test 7. given() get() then() assertThat() body(String path,
+	// List<Argument> arguments, ResponseAwareMatcher<R> responseAwareMatcher)
 	@Test
-	public void test8() {		
+	public void test7() {
 	}
-	
-	
-	//### Test 9. given()  get()  then() assertThat() body(String path, List<Argument> arguments,org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
+
+	// ### Test 8. given() get() then() assertThat() body(List<Argument> arguments,
+	// org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
 	@Test
-	public void test9() {		
+	public void test8() {
 	}
-	
-	//### Test 10. given()  get()  then() assertThat() body(String path, org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
+
+	// ### Test 9. given() get() then() assertThat() body(String path,
+	// List<Argument> arguments,org.hamcrest.Matcher matcher,
+	// Object... additionalKeyMatcherPairs)
 	@Test
-	public void test10() {		
+	public void test9() {
 	}
-	
-	
-	//### Test 11. given()  get()  then() assertThat() body()  containsString()  and()
+
+	// ### Test 10. given() get() then() assertThat() body(String path,
+	// org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
+	@Test
+	public void test10() {
+	}
+
+	// ### Test 11. given() get() then() assertThat() body() containsString() and()
 	@Test
 	public void test11() {
-		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().body(containsString("Operation")).and().body(containsString("Successful"));
+		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().body(containsString("Operation"))
+				.and().body(containsString("Successful"));
 	}
-	
-	
-	//### Test 12. given()  get()  then() assertThat() content
+
+	// ### Test 12. given() get() then() assertThat() content
 	@Test
 	public void test12() {
-		//given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().content();
+		// given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().content();
 	}
-	
+
 }
