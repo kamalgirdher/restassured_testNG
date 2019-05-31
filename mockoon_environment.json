@@ -1,0 +1,42 @@
+{
+    "id": "mockoon_export",
+    "appVersion": "1.4.0",
+    "checksum": "be435dacccefc1984dc66dcee6355a9e",
+    "subject": "environment",
+    "data": {
+        "uuid": "d0ba9ed0-82ba-11e9-a399-1b2bce49c108",
+        "name": "Example",
+        "endpointPrefix": "",
+        "latency": 0,
+        "port": 3000,
+        "routes": [
+            {
+                "uuid": "717a0d60-8374-11e9-a399-1b2bce49c108",
+                "documentation": "",
+                "method": "get",
+                "endpoint": "get_200_OK_SIMPLE_BODY_MESSAGE",
+                "body": "{Operation Successful!}",
+                "latency": 0,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            }
+        ],
+        "proxyMode": false,
+        "proxyHost": "",
+        "https": false,
+        "cors": true,
+        "headers": [
+            {
+                "key": "",
+                "value": ""
+            }
+        ]
+    }
+}
