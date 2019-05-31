@@ -24,7 +24,7 @@ REST Assured can be used easily in combination with testing frameworks such as J
  ### Test 1. given()  get()  then()  statusCode(int)
 
 ```java
-public void test_getRequest() {
+public void test1() {
 	given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().statusCode(200);
 	}
 ```
@@ -41,7 +41,7 @@ public void test2() {
 ### Test 3. given()  get()  then() assertThat() statusCode()
 
 ```java
-	public void test2() {
+	public void test3() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().assertThat().statusCode(200);
 	}
 ```
@@ -51,7 +51,7 @@ public void test2() {
 
 > Note : Use this import for containsString : import static org.hamcrest.CoreMatchers.containsString;
 ```java
-	public void test3() {
+	public void test4() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().body(containsString("Operation"));
 	}
 ```
@@ -80,7 +80,7 @@ public void test2() {
 
 ### Test 11. given()  get()  then() assertThat() body()  containsString()  and()
 ```java
-public void test4() {
+public void test11() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().body(containsString("Operation")).and().body(containsString("Successful"));
 	}
 ```
