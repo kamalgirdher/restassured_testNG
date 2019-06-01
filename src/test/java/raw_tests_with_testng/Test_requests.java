@@ -1,14 +1,13 @@
 package raw_tests_with_testng;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.CoreMatchers.equalTo;
-
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.CoreMatchers.*;
 import org.hamcrest.Matcher;
+import org.hamcrest.Matchers.*;
 import org.testng.annotations.Test;
-
-import io.restassured.matcher.ResponseAwareMatcher;
+import io.restassured.matcher.*;
 import io.restassured.response.Response;
+
 
 public class Test_requests {
 
@@ -96,6 +95,46 @@ public class Test_requests {
 	 */
 	@Test
 	public void test6() {
+		
+		/*
+		 * For Content-Type=application/xml
+		 * for java v1.7 or less we use ResponseAwareMatchers
+		 */
+		given().get("http://localhost:3000/get_200_OK_SimpleXML_Response").then().root("root.%s").body(withArgs("lname"),
+				new ResponseAwareMatcher<Response>() {
+					public Matcher<?> matcher(Response response) {
+						return equalTo("girdher");
+					}
+				});
+		
+		
+		
+		/*
+		 * For Content-Type=application/json
+		 * for java v1.7 or less we use ResponseAwareMatchers
+		 */
+		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().root("%s").body(withArgs("lname"),
+				new ResponseAwareMatcher<Response>() {
+					public Matcher<?> matcher(Response response) {
+						return equalTo("girdher");
+					}
+				});
+		
+		/*
+		 * For Content-Type=application/json
+		 * for java v1.8 we use lambda expressions
+		 */
+		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().root("%s").body(withArgs("lname"),
+				response -> equalTo("girdher"));
+		
+		/*
+		 * For Content-Type=application/xml
+		 * for java v1.8 we use lambda expressions
+		 */
+		given().get("http://localhost:3000/get_200_OK_SimpleXML_Response").then().root("root.%s").body(withArgs("lname"),
+				response -> equalTo("girdher"));
+
+		
 	}
 
 	/*
