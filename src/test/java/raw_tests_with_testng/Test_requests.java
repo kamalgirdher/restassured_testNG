@@ -139,7 +139,6 @@ public class Test_requests {
 	 */
 	@Test
 	public void test7() {
-		
 		/*
 		 * For Content-Type=application/json
 		 * for java v1.7 or less we use ResponseAwareMatchers
@@ -162,10 +161,11 @@ public class Test_requests {
 
 	/*
 	 *  ### Test 8. given() get() then() assertThat() body(List<Argument> arguments,
+	 *  org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
 	 */
-	// org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
 	@Test
 	public void test8() {
+		//unable to find usage of Object(3rd argument)
 	}
 
 	/*
@@ -175,6 +175,7 @@ public class Test_requests {
 	 */
 	@Test
 	public void test9() {
+		//Unable to to find usage of Object (4th argument)
 	}
 
 	/*
@@ -183,8 +184,10 @@ public class Test_requests {
 	 */
 	@Test
 	public void test10() {
+		//Unable to to find usage of Object (3rd argument)
 	}
 
+	
 	/*
 	 *  ### Test 11. given() get() then() assertThat() body() containsString() and()
 	 */

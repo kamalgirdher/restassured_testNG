@@ -257,18 +257,21 @@ public void test7() {
 
 ### Test 8. given()  get()  then() assertThat()  body(List<Argument> arguments, org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
 ```java
+unable to find usage of Object
 ```
 
 --------------------------------------------------------------------------------
 
 ### Test 9. given()  get()  then() assertThat() body(String path, List<Argument> arguments,org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
 ```java
+unable to find usage of Object
 ```
 
 --------------------------------------------------------------------------------
 
 ### Test 10. given()  get()  then() assertThat() body(String path, org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
 ```java
+unable to find usage of Object
 ```
 
 --------------------------------------------------------------------------------
