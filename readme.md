@@ -29,54 +29,82 @@ REST Assured can be used easily in combination with testing frameworks such as J
 
  ### Test 1. given()  get()  then()  statusCode(int)
 
- #### API response [http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE]
-	```json
+  #### API response : get_200_OK_SIMPLE_BODY_MESSAGE
 	{Operation Successful!}
-	```
 
+  #### Code : 
 ```java
 public void test1() {
 	given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().statusCode(200);
 }
 ```
 
+--------------------------------------------------------------------------------
+
+
 ### Test 2. given()  get()  then()  statusCode(Matcher)
 > Note :  Use this import for equalsTo : import static org.hamcrest.CoreMatchers.equalsTo;
 
-#### API response [http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE]
-	```json
+  #### API response : get_200_OK_SIMPLE_BODY_MESSAGE
 	{Operation Successful!}
-	```
 
-	
+  #### Code :   
 ```java
 public void test2() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().statusCode(equalTo(200));
 	}
 ```
+
 --------------------------------------------------------------------------------
 
 ### Test 3. given()  get()  then() assertThat() statusCode()
 
+  #### API response : get_200_OK_SIMPLE_BODY_MESSAGE
+	{Operation Successful!}
+
+  #### Code :   
 ```java
 	public void test3() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().assertThat().statusCode(200);
 	}
 ```
+ 
 --------------------------------------------------------------------------------
 
 ### Test 4. given()  get()  then() assertThat() body(Matcher<?> matcher, Matcher<?>...additionalMatchers)
 
 > Note : Use this import for containsString : import static org.hamcrest.CoreMatchers.containsString;
+
+  #### API response : get_200_OK_SIMPLE_BODY_MESSAGE
+	{Operation Successful!}
+
+  #### Code :   
 ```java
 	public void test4() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().body(containsString("Operation"));
 	}
 ```
 > we can pass multiple matchers comma separated.
+  
+ --------------------------------------------------------------------------------
 
+ ### Test 5. given()  get()  then() assertThat()  body(String path, ResponseAwareMatcher<R> responseAwareMatcher) 
 
-### Test 5. given()  get()  then() assertThat()  body(String path, ResponseAwareMatcher<R> responseAwareMatcher) 
+ #### API response : get_200_OK_SingleNode_Response
+	{
+	"fname":"kamal",
+	"lname":"girdher"
+	}
+	
+	
+ #### API response : get_200_OK_SimpleXML_Response
+	<root>
+		<fname>kamal</fname>
+		<lname>girdher</lname>
+	</root>	
+	
+
+  #### Code :   
 ```java
 	public void test5() {
 
@@ -121,7 +149,25 @@ public void test2() {
 	}
 ```
 
+--------------------------------------------------------------------------------
+
+
 ### Test 6. given()  get()  then() assertThat()  body(List<Argument> arguments, ResponseAwareMatcher<R> responseAwareMatcher) 
+
+ #### API response : get_200_OK_SingleNode_Response
+	{
+	"fname":"kamal",
+	"lname":"girdher"
+	}
+	
+	
+ #### API response : get_200_OK_SimpleXML_Response
+	<root>
+		<fname>kamal</fname>
+		<lname>girdher</lname>
+	</root>	
+
+ #### Code :
 ```java
 public void test6() {
 		
@@ -165,26 +211,29 @@ public void test6() {
 
 ```
 
+--------------------------------------------------------------------------------
 
 ### Test 7. given()  get()  then() assertThat() body(String path, List<Argument> arguments, ResponseAwareMatcher<R> responseAwareMatcher)
 ```java
 ```
 
+--------------------------------------------------------------------------------
+
 ### Test 8. given()  get()  then() assertThat()  body(List<Argument> arguments, org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
 ```java
 ```
 
+--------------------------------------------------------------------------------
 
 ### Test 9. given()  get()  then() assertThat() body(String path, List<Argument> arguments,org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
 ```java
 ```
 
+--------------------------------------------------------------------------------
 
 ### Test 10. given()  get()  then() assertThat() body(String path, org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
 ```java
 ```
-
-
 
 --------------------------------------------------------------------------------
 
@@ -196,6 +245,7 @@ public void test11() {
 	}
 ```
 
+--------------------------------------------------------------------------------
 
 # UPDATE IN PROGRESS. Stay Tuned
 
