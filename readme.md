@@ -25,6 +25,12 @@ REST Assured can be used easily in combination with testing frameworks such as J
  > Open Test_requests.java in src/test/java/raw_tests_with_testng
 
 --------------------------------------------------------------------------------
+### API response [http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE]
+
+```json
+{Operation Successful!}
+```
+
  ### Test 1. given()  get()  then()  statusCode(int)
 
 ```java
