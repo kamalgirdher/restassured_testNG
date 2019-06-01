@@ -1,7 +1,7 @@
 {
     "id": "mockoon_export",
     "appVersion": "1.4.0",
-    "checksum": "d8f341bbe610e0e853fbade791a14c25",
+    "checksum": "75552c0cf1662efebe302a2e44521913",
     "subject": "environment",
     "data": {
         "uuid": "d0ba9ed0-82ba-11e9-a399-1b2bce49c108",
@@ -32,7 +32,7 @@
                 "documentation": "",
                 "method": "get",
                 "endpoint": "get_200_OK_SingleNode_Response",
-                "body": "{\n\"fname\":\"kamal\",\n\"lname\":\"girdher\"\n}",
+                "body": "{\n\"fname\":\"kamal\",\n\"lname\":\"girdher\",\n\"website1\":\"https://extremeExcel.com\",\n\"website2\":\"https://megettingerror.blogspot.com\"\n}",
                 "latency": 0,
                 "statusCode": "200",
                 "headers": [

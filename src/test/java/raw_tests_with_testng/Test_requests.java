@@ -105,9 +105,7 @@ public class Test_requests {
 					public Matcher<?> matcher(Response response) {
 						return equalTo("girdher");
 					}
-				});
-		
-		
+				});		
 		
 		/*
 		 * For Content-Type=application/json
@@ -134,7 +132,6 @@ public class Test_requests {
 		given().get("http://localhost:3000/get_200_OK_SimpleXML_Response").then().root("root.%s").body(withArgs("lname"),
 				response -> equalTo("girdher"));
 
-		
 	}
 
 	/*
@@ -142,6 +139,25 @@ public class Test_requests {
 	 */
 	@Test
 	public void test7() {
+		
+		/*
+		 * For Content-Type=application/json
+		 * for java v1.7 or less we use ResponseAwareMatchers
+		 */
+		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().body("website%s", withArgs("1"),
+				new ResponseAwareMatcher<Response>() {
+					public Matcher<?> matcher(Response response) {
+						return equalTo("https://extremeExcel.com");
+					}
+				});		
+	
+		/*
+		 * For Content-Type=application/json
+		 * for java v1.8 we use lambda expressions
+		 */
+		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().body("website%s",withArgs("1"),
+				response -> equalTo("https://extremeExcel.com"));
+		
 	}
 
 	/*

@@ -92,8 +92,10 @@ public void test2() {
 
  #### API response : get_200_OK_SingleNode_Response
 	{
-	"fname":"kamal",
-	"lname":"girdher"
+		"fname":"kamal",
+		"lname":"girdher",
+		"website1":"https://extremeExcel.com",
+		"website2":"https://megettingerror.blogspot.com"
 	}
 	
 	
@@ -156,8 +158,10 @@ public void test2() {
 
  #### API response : get_200_OK_SingleNode_Response
 	{
-	"fname":"kamal",
-	"lname":"girdher"
+		"fname":"kamal",
+		"lname":"girdher",
+		"website1":"https://extremeExcel.com",
+		"website2":"https://megettingerror.blogspot.com"
 	}
 	
 	
@@ -214,7 +218,39 @@ public void test6() {
 --------------------------------------------------------------------------------
 
 ### Test 7. given()  get()  then() assertThat() body(String path, List<Argument> arguments, ResponseAwareMatcher<R> responseAwareMatcher)
+
+ #### API response : get_200_OK_SingleNode_Response
+	{
+		"fname":"kamal",
+		"lname":"girdher",
+		"website1":"https://extremeExcel.com",
+		"website2":"https://megettingerror.blogspot.com"
+	}
+
+ #### Code :
 ```java
+public void test7() {
+		
+		/*
+		 * For Content-Type=application/json
+		 * for java v1.7 or less we use ResponseAwareMatchers
+		 */
+		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().body("website%s", withArgs("1"),
+				new ResponseAwareMatcher<Response>() {
+					public Matcher<?> matcher(Response response) {
+						return equalTo("https://extremeExcel.com");
+					}
+				});		
+	
+		/*
+		 * For Content-Type=application/json
+		 * for java v1.8 we use lambda expressions
+		 */
+		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().body("website%s",withArgs("1"),
+				response -> equalTo("https://extremeExcel.com"));
+		
+	}
+
 ```
 
 --------------------------------------------------------------------------------
