@@ -13,7 +13,7 @@ REST Assured can be used easily in combination with testing frameworks such as J
 
  > Download and install Mockoon(https://mockoon.com) to mock services and practice extensively.
 
- > Create New environment in mockoon using mockoon_environment.json in the project. [Refer : https://megettingerror.blogspot.com/2019/06/how-to-import-environment-in-mockoon.html]
+ > Create New environment in mockoon using mockoon_environment.json in the project. [Refer : 	https://megettingerror.blogspot.com/2019/06/how-to-import-environment-in-mockoon.html]
 
  > Download and install Postman (chrome plugin or standalone)
  
@@ -257,27 +257,31 @@ public void test7() {
 
 ### Test 8. given()  get()  then() assertThat()  body(List<Argument> arguments, org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
 ```java
-unable to find usage of Object
+unable to find usage of Object. Write to me at excel.microk@gmail.com if you have an example
 ```
 
 --------------------------------------------------------------------------------
 
 ### Test 9. given()  get()  then() assertThat() body(String path, List<Argument> arguments,org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
 ```java
-unable to find usage of Object
+unable to find usage of Object. Write to me at excel.microk@gmail.com if you have an example
 ```
 
 --------------------------------------------------------------------------------
 
 ### Test 10. given()  get()  then() assertThat() body(String path, org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
 ```java
-unable to find usage of Object
+unable to find usage of Object. Write to me at excel.microk@gmail.com if you have an example
 ```
 
 --------------------------------------------------------------------------------
 
-
 ### Test 11. given()  get()  then() assertThat() body()  containsString()  and()
+
+  #### API response : get_200_OK_SIMPLE_BODY_MESSAGE
+	{Operation Successful!}
+
+  #### Code : 
 ```java
 public void test11() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().body(containsString("Operation")).and().body(containsString("Successful"));
@@ -286,13 +290,14 @@ public void test11() {
 
 --------------------------------------------------------------------------------
 
-# UPDATE IN PROGRESS. Stay Tuned
+### Test 12. given()  get()  then() assertThat() content()
 
 
-### Test 12. given()  get()  then() assertThat() content
+
+--------------------------------------------------------------------------------
 
 
-e.g.  get("/something").then().assertThat().body(containsString("OK")).and().body(containsString("something else"));
+e.g.  get("/something").then().assertThat().body(containsString("OK")).and().body(containsString("something else"));		
  
 is that same as: 
  get("/something").then().assertThat().body(containsString("OK")).body(containsString("something else"));
@@ -317,10 +322,8 @@ log()
 noRoot()
 noRootPath()
 parser()
-root()
 spec()
 specification()
-statusCode()
 statusLine()
 using()
 

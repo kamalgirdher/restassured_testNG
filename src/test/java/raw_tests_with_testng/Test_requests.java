@@ -202,7 +202,17 @@ public class Test_requests {
 	 */
 	@Test
 	public void test12() {
-		// given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().content();
+		/*
+		 * For Content-Type=application/json
+		 * for java v1.7 or less we use ResponseAwareMatchers
+		 */
+		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().content("website%s", withArgs("1"),
+				new ResponseAwareMatcher<Response>() {
+					public Matcher<?> matcher(Response response) {
+						return equalTo("https://extremeExcel.com");
+					}
+				});		
+	
 	}
 
 }
