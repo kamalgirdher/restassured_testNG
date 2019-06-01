@@ -1,7 +1,7 @@
 {
     "id": "mockoon_export",
     "appVersion": "1.4.0",
-    "checksum": "be435dacccefc1984dc66dcee6355a9e",
+    "checksum": "d8f341bbe610e0e853fbade791a14c25",
     "subject": "environment",
     "data": {
         "uuid": "d0ba9ed0-82ba-11e9-a399-1b2bce49c108",
@@ -22,6 +22,57 @@
                     {
                         "key": "",
                         "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "e7f9f1b0-838f-11e9-a399-1b2bce49c108",
+                "documentation": "",
+                "method": "get",
+                "endpoint": "get_200_OK_SingleNode_Response",
+                "body": "{\n\"fname\":\"kamal\",\n\"lname\":\"girdher\"\n}",
+                "latency": 0,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json "
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "b9e5a790-8387-11e9-a399-1b2bce49c108",
+                "documentation": "",
+                "method": "get",
+                "endpoint": "get_200_OK_Json_Response",
+                "body": " {\r\n    \"data\" : {\r\n        \"user1\" : {\r\n             \"userId\" : \"1001\",\r\n             \"Name\" : \"Kamal\"\r\n        },\r\n        \"user2\" : {\r\n             \"userId\" : \"1002\",\r\n             \"Name\" : \"Karan\"\r\n        },\r\n    }\r\n }",
+                "latency": 0,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "ae81c980-83a3-11e9-a399-1b2bce49c108",
+                "documentation": "",
+                "method": "get",
+                "endpoint": "get_200_OK_SimpleXML_Response",
+                "body": "<root>\n<fname>kamal</fname>\n<lname>girdher</lname>\n</root>",
+                "latency": 0,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/xml"
                     }
                 ],
                 "filePath": "",
