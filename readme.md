@@ -25,22 +25,30 @@ REST Assured can be used easily in combination with testing frameworks such as J
  > Open Test_requests.java in src/test/java/raw_tests_with_testng
 
 --------------------------------------------------------------------------------
-### API response [http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE]
 
-```json
-{Operation Successful!}
-```
 
  ### Test 1. given()  get()  then()  statusCode(int)
+
+ #### API response [http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE]
+	```json
+	{Operation Successful!}
+	```
 
 ```java
 public void test1() {
 	given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().statusCode(200);
-	}
+}
 ```
 
 ### Test 2. given()  get()  then()  statusCode(Matcher)
 > Note :  Use this import for equalsTo : import static org.hamcrest.CoreMatchers.equalsTo;
+
+#### API response [http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE]
+	```json
+	{Operation Successful!}
+	```
+
+	
 ```java
 public void test2() {
 		given().get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().statusCode(equalTo(200));
