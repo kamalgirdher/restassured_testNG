@@ -5,6 +5,10 @@ import static org.hamcrest.CoreMatchers.*;
 import org.hamcrest.Matcher;
 import org.hamcrest.Matchers.*;
 import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.http.Cookie;
+import io.restassured.http.Cookies;
 import io.restassured.matcher.*;
 import io.restassured.response.Response;
 
@@ -37,7 +41,7 @@ public class Test_requests {
 	}
 
 	/*
-	 *  ### Test 4. given() get() then() assertThat() body() containsString()
+	 *  ### Test 4. given() get() then() body() containsString()
 	 */
 	@Test
 	public void test4() {
@@ -91,7 +95,7 @@ public class Test_requests {
 	}
 
 	/*
-	 *  ### Test 6. given() get() then() assertThat() body(List<Argument> arguments,ResponseAwareMatcher<R> responseAwareMatcher)
+	 *  ### Test 6. given() get() then() body(List<Argument> arguments,ResponseAwareMatcher<R> responseAwareMatcher)
 	 */
 	@Test
 	public void test6() {
@@ -135,7 +139,7 @@ public class Test_requests {
 	}
 
 	/*
-	 *  ### Test 7. given() get() then() assertThat() body(String path,List<Argument> arguments, ResponseAwareMatcher<R> responseAwareMatcher)
+	 *  ### Test 7. given() get() then() body(String path,List<Argument> arguments, ResponseAwareMatcher<R> responseAwareMatcher)
 	 */
 	@Test
 	public void test7() {
@@ -169,7 +173,7 @@ public class Test_requests {
 	}
 
 	/*
-	 *  ### Test 9. given() get() then() assertThat() body(String path,
+	 *  ### Test 9. given() get() then()  body(String path,
 	 *  List<Argument> arguments,org.hamcrest.Matcher matcher,
 	 *  Object... additionalKeyMatcherPairs)
 	 */
@@ -179,7 +183,7 @@ public class Test_requests {
 	}
 
 	/*
-	 *  ### Test 10. given() get() then() assertThat() body(String path,
+	 *  ### Test 10. given() get() then() body(String path,
 	 *  org.hamcrest.Matcher matcher, Object... additionalKeyMatcherPairs)
 	 */
 	@Test
@@ -198,13 +202,16 @@ public class Test_requests {
 	}
 
 	/*
-	 *  ### Test 12. given() get() then() assertThat() content
+	 *  ### Test 12. given() get() then() content()
 	 */
 	@Test
 	public void test12() {
 		/*
 		 * For Content-Type=application/json
 		 * for java v1.7 or less we use ResponseAwareMatchers
+		 * 
+		 * For now I see no difference in .body() and .content(). If you have answer, please
+		 * reply on stackoverflow https://stackoverflow.com/questions/56408253/difference-between-restassured-body-and-content
 		 */
 		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().content("website%s", withArgs("1"),
 				new ResponseAwareMatcher<Response>() {
@@ -215,4 +222,31 @@ public class Test_requests {
 	
 	}
 
+	/*
+	 *  ### Test 13. given() get() then() contentType()
+	 */
+	@Test
+	public void test13() {
+		
+		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().contentType(equalTo("application/json; charset=utf-8"));
+		
+		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().contentType("application/json; charset=utf-8");
+	}
+
+
+	/*
+	 *  ### Test 14. given() get() then() Cookies [ getDetailedCookies(), get() , getValue()]  
+	 */
+	@Test
+	public void test14() {
+		
+		Cookies allCookies = get("https://www.stackoverflow.com").getDetailedCookies();
+
+		Cookie myCookie = allCookies.get("prov");
+		
+		System.out.println("Cookie value is : " + myCookie.getValue());
+		
+	}
+
+	
 }

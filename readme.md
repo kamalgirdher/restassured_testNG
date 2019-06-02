@@ -292,7 +292,68 @@ public void test11() {
 
 ### Test 12. given()  get()  then() assertThat() content()
 
+ #### API response : get_200_OK_SingleNode_Response
+	{
+		"fname":"kamal",
+		"lname":"girdher",
+		"website1":"https://extremeExcel.com",
+		"website2":"https://megettingerror.blogspot.com"
+	}
+ #### Code :
+```java
+	public void test12() {
+		/*
+		 * For Content-Type=application/json
+		 * for java v1.7 or less we use ResponseAwareMatchers
+		 * 
+		 * For now I see no difference in .body() and .content(). If you have answer, please
+		 * reply on stackoverflow https://stackoverflow.com/questions/56408253/difference-between-restassured-body-and-content
+		 */
+		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().content("website%s", withArgs("1"),
+				new ResponseAwareMatcher<Response>() {
+					public Matcher<?> matcher(Response response) {
+						return equalTo("https://extremeExcel.com");
+					}
+				});		
+	
+	}
+```
+--------------------------------------------------------------------------------
 
+### Test 13. given()  get()  then() assertThat() contentType()
+
+ #### API response : get_200_OK_SingleNode_Response
+	{
+		"fname":"kamal",
+		"lname":"girdher",
+		"website1":"https://extremeExcel.com",
+		"website2":"https://megettingerror.blogspot.com"
+	}
+ #### Code :
+```java
+	public void test13() {
+		
+		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().contentType(equalTo("application/json; charset=utf-8"));
+		
+		given().get("http://localhost:3000/get_200_OK_SingleNode_Response").then().contentType("application/json; charset=utf-8");
+	}
+```
+
+--------------------------------------------------------------------------------
+
+### Test 14. given() get() then() Cookies [ getDetailedCookies(), get() , getValue()]
+ #### Code :
+```java
+public void test14() {
+		
+		Cookies allCookies = get("https://www.stackoverflow.com").getDetailedCookies();
+
+		Cookie myCookie = allCookies.get("prov");
+		
+		System.out.println("Cookie value is : " + myCookie.getValue());
+		
+	}
+```
 
 --------------------------------------------------------------------------------
 
@@ -309,8 +370,6 @@ is that same as:
  
 
 appendRoot()
-content()
-contentType()
 cookie()
 cookies()
 defaultParser()
@@ -326,8 +385,6 @@ spec()
 specification()
 statusLine()
 using()
-
-
 
 
 
