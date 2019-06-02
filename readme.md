@@ -344,14 +344,24 @@ public void test11() {
 ### Test 14. given() get() then() Cookies [ getDetailedCookies(), get() , getValue()]
  #### Code :
 ```java
-public void test14() {
+	public void test14() {
 		
+		//print a cookie value
 		Cookies allCookies = get("https://www.stackoverflow.com").getDetailedCookies();
-
 		Cookie myCookie = allCookies.get("prov");
-		
 		System.out.println("Cookie value is : " + myCookie.getValue());
+		System.out.println("Cookie Domain is : " + myCookie.getDomain());
+		System.out.println("Cookie Max age is : " + myCookie.getMaxAge());
+		System.out.println("Cookie path is : " + myCookie.getPath());
+		System.out.println("Cookie version is : " + myCookie.getVersion());
+		System.out.println("Cookie Comment is : " + myCookie.getComment());
+		System.out.println("Cookie Expires on : " +  myCookie.EXPIRES);
 		
+		//verify cookie value using Matchers
+		given().get("https://www.stackoverflow.com").then().cookie("prov",containsString("-"));
+		
+		//Another way to extract cookie value
+		System.out.println("Another way to read cookie value : " + given().get("https://www.stackoverflow.com").then().extract().detailedCookie("prov").getValue());
 	}
 ```
 
@@ -370,11 +380,8 @@ is that same as:
  
 
 appendRoot()
-cookie()
-cookies()
 defaultParser()
 detachRoot()
-extract()
 header()
 headers()
 log()
