@@ -388,6 +388,8 @@ public void test11() {
 
 --------------------------------------------------------------------------------
 
+
+
 e.g.  get("/something").then().assertThat().body(containsString("OK")).and().body(containsString("something else"));		
  
 is that same as: 
@@ -396,10 +398,6 @@ is that same as:
 
 
 
- 
- 
-header()
-headers()
 log()
 statusLine()
 using()
@@ -427,18 +425,3 @@ specification()
 
 Source : https://github.com/executeautomation/restassured
 
-
-```python
-def fileDownload(url,c):
-    filename = str(c)# + '.' + url.split('.')[-1] # + '_' + url.split('/')[-1]
-    r = requests.get(url, allow_redirects=True)
-    f = open("img/" + filename, 'wb')
-    f.write(r.content)
-
-    f.close()
-
-
- fileDownload("https://www.blogger.com/img/blogger-logotype-color-black-1x.png","test.jpg")
-
- 
-```	 
