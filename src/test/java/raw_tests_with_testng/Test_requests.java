@@ -256,8 +256,31 @@ public class Test_requests {
 		
 		//Another way to extract cookie value
 		System.out.println("Another way to read cookie value : " + given().get("https://www.stackoverflow.com").then().extract().detailedCookie("prov").getValue());
-
 	}
+	
+	
+	/*
+	 *  ### Test 15. header() and headers()
+	 */
+	@Test
+	public void test15() {
+		get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().header("myHeader",equalTo("kamal"));
+		
+		get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().headers("myHeader",equalTo("kamal"));
+		
+		get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().headers("myHeader",equalTo("kamal"),"secondHeader",equalTo("second"));
+	}
+	
+
+	/*
+	 *  ### Test 16. log()
+	 */
+	@Test
+	public void test16() {
+		System.out.println("Logs :: ");
+		System.out.println(get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().log().body());
+	}
+
 
 	
 }

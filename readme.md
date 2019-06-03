@@ -368,6 +368,26 @@ public void test11() {
 --------------------------------------------------------------------------------
 
 
+### Test 15. header() and headers()
+
+ ### Headers:
+	myHeader = kamal
+	secondHeader = second
+	thirdHeader = third
+
+ #### Code :
+```java
+	public void test15() {
+		get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().header("myHeader",equalTo("kamal"));
+		
+		get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().headers("myHeader",equalTo("kamal"));
+		
+		get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().headers("myHeader",equalTo("kamal"),"secondHeader",equalTo("second"));
+	}
+```
+
+--------------------------------------------------------------------------------
+
 e.g.  get("/something").then().assertThat().body(containsString("OK")).and().body(containsString("something else"));		
  
 is that same as: 
@@ -378,20 +398,20 @@ is that same as:
 
  
  
-
-appendRoot()
-defaultParser()
-detachRoot()
 header()
 headers()
 log()
+statusLine()
+using()
+appendRoot()
+defaultParser()
+detachRoot()
 noRoot()
 noRootPath()
 parser()
 spec()
 specification()
-statusLine()
-using()
+
 
 
 
