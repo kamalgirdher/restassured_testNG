@@ -1,8 +1,8 @@
 
-To learn automation, Subscribe on Youtube.
+To learn automation, Subscribe on Youtube.  :red_circle: 
 https://www.youtube.com/c/xtremeExcel
 
-or join our Telegram group.
+or join our Telegram group.  :large_blue_circle: 
 https://t.me/letsautomate
 
 ## What is RestAssured
@@ -432,25 +432,25 @@ public void test11() {
 	
 
   Q 6. Explore the usage of below:
-	- using()
+	 :heavy_check_mark: using()
 		
-	- statusLine()
+	 :heavy_check_mark: statusLine()
 		
-	- appendRoot()
+	 :heavy_check_mark: appendRoot()
 		
-	- defaultParser()
+	 :heavy_check_mark: defaultParser()
 		
-	- detachRoot()
+	 :heavy_check_mark: detachRoot()
 		
-	- noRoot()
+	 :heavy_check_mark: noRoot()
 		
-	- noRootPath()
+	 :heavy_check_mark: noRootPath()
 		
-	- parser()
+	 :heavy_check_mark: parser()
 		
-	- spec()
+	 :heavy_check_mark: spec()
 		
-	- specification()
+	 :heavy_check_mark: specification()
 	
   
 --------------------------------------------------------------------------------
