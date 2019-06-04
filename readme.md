@@ -431,29 +431,27 @@ public void test11() {
 	>	get("/something").then().assertThat().body(containsString("OK")).body(containsString("something else"));
 	
 
-  Q 6. Explore the usage of below:
-  
-	:ballot_box_with_check: using()
+  Q 6. Explore the usage of below
+    :ballot_box_with_check: using()
 		
-	:ballot_box_with_check:: statusLine()
+    :ballot_box_with_check:: statusLine()
 		
-	:ballot_box_with_check: appendRoot()
+    :ballot_box_with_check: appendRoot()
 		
-	:ballot_box_with_check: defaultParser()
+    :ballot_box_with_check: defaultParser()
 		
-	:ballot_box_with_check: detachRoot()
+    :ballot_box_with_check: detachRoot()
 		
-	:ballot_box_with_check: noRoot()
+    :ballot_box_with_check: noRoot()
 		
-	:ballot_box_with_check: noRootPath()
+    :ballot_box_with_check: noRootPath()
 		
-	:ballot_box_with_check: parser()
+    :ballot_box_with_check: parser()
 		
-	:ballot_box_with_check: spec()
+    :ballot_box_with_check: spec()
 		
-	:ballot_box_with_check: specification()
+    :ballot_box_with_check: specification()
 	
-  
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
