@@ -432,25 +432,26 @@ public void test11() {
 	
 
   Q 6. Explore the usage of below
-    :ballot_box_with_check: using()
+  
+	> :cyclone: using()
 		
-    :ballot_box_with_check:: statusLine()
+    > :cyclone: statusLine()
 		
-    :ballot_box_with_check: appendRoot()
+    > :cyclone: appendRoot()
 		
-    :ballot_box_with_check: defaultParser()
+    > :cyclone: defaultParser()
 		
-    :ballot_box_with_check: detachRoot()
+    > :cyclone: detachRoot()
 		
-    :ballot_box_with_check: noRoot()
+    > :cyclone: noRoot()
 		
-    :ballot_box_with_check: noRootPath()
+    > :cyclone: noRootPath()
 		
-    :ballot_box_with_check: parser()
+    > :cyclone: parser()
 		
-    :ballot_box_with_check: spec()
+    > :cyclone: spec()
 		
-    :ballot_box_with_check: specification()
+    > :cyclone: specification()
 	
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
