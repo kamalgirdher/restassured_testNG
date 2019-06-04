@@ -431,7 +431,7 @@ public void test11() {
 	>	get("/something").then().assertThat().body(containsString("OK")).body(containsString("something else"));
 	
 
-  Q 6. Explore the usage of below <br/>  :low_brightness: using() <br/>  :low_brightness: statusLine() <br/>  :low_brightness: appendRoot() <br/>   :low_brightness: defaultParser() <br/> :low_brightness: detachRoot() <br/>  :low_brightness: noRoot() <br/>  :low_brightness: noRootPath() <br/> :low_brightness: parser() <br/> :low_brightness: spec() <br/> :low_brightness: specification()
+  Q 6. Explore the usage of below <br/> <br/>  :low_brightness: using() <br/> <br/>  :low_brightness: statusLine() <br/> <br/>  :low_brightness: appendRoot() <br/> <br/>   :low_brightness: defaultParser() <br/> <br/> :low_brightness: detachRoot() <br/> <br/>  :low_brightness: noRoot() <br/> <br/>  :low_brightness: noRootPath() <br/> <br/> :low_brightness: parser() <br/> <br/> :low_brightness: spec() <br/> <br/> :low_brightness: specification()
 	
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
