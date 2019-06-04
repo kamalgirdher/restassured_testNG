@@ -370,7 +370,7 @@ public void test11() {
 
 ### Test 15. header() and headers()
 
- ### Headers:
+ #### Headers:
 	myHeader = kamal
 	secondHeader = second
 	thirdHeader = third
@@ -388,27 +388,67 @@ public void test11() {
 
 --------------------------------------------------------------------------------
 
+### Test 16. log()
+```java
+	public void test16() {
+		System.out.println("Log body :: ");
+		System.out.println(get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().log().body());
+		
+		System.out.println("Log Everything:: ");
+		System.out.println(get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().log().everything());
+		
+		System.out.println("Log when status matches: ");
+		System.out.println(get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().log().ifStatusCodeIsEqualTo(200));
+		
+		System.out.println("Log when status matches: ");
+		System.out.println(get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().log());
+		
+	}
+```
 
 
-e.g.  get("/something").then().assertThat().body(containsString("OK")).and().body(containsString("something else"));		
- 
-is that same as: 
- get("/something").then().assertThat().body(containsString("OK")).body(containsString("something else"));
- 
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+## Important questions for Interview:
+
+  Q 1. What is RequestSpecBuilder?
+
+  Q 2. What is difference between .body() and .content()?
+	get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().body(...)
+	get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().content(...)
+
+  Q 3. Write a use case where we use .log() function for verification using restassured.
+	get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().log()
+
+  Q 4. What is ResponseAwareMatcher? How do we use it?
+  
+  Q 5. What is difference b/w below statements?
+  
+	>	get("/something").then().assertThat().body(containsString("OK")).and().body(containsString("something else"));		
+		
+		and
+		
+	>	get("/something").then().assertThat().body(containsString("OK")).body(containsString("something else"));
+	
+
+  Q 6. Explore the usage of below:
+		a. using()
+		b. statusLine()
+		c. appendRoot()
+		d. defaultParser()
+		e. detachRoot()
+		f. noRoot()
+		g. noRootPath()
+		h. parser()
+		i. spec()
+		j. specification()
+
+  
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 
 
-log()
-statusLine()
-using()
-appendRoot()
-defaultParser()
-detachRoot()
-noRoot()
-noRootPath()
-parser()
-spec()
-specification()
 
 
 
@@ -418,10 +458,9 @@ specification()
 
 
 
-## What is RequestSpecBuilder
 
 
 
-
+  
 Source : https://github.com/executeautomation/restassured
 

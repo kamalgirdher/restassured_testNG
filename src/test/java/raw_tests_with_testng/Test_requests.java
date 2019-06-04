@@ -236,7 +236,7 @@ public class Test_requests {
 
 	/*
 	 *  ### Test 14. given() get() then() Cookies [ getDetailedCookies(), get() , getValue(), cookie()]  
-	 */
+	
 	@Test
 	public void test14() {
 		
@@ -257,7 +257,7 @@ public class Test_requests {
 		//Another way to extract cookie value
 		System.out.println("Another way to read cookie value : " + given().get("https://www.stackoverflow.com").then().extract().detailedCookie("prov").getValue());
 	}
-	
+	 */
 	
 	/*
 	 *  ### Test 15. header() and headers()
@@ -277,8 +277,18 @@ public class Test_requests {
 	 */
 	@Test
 	public void test16() {
-		System.out.println("Logs :: ");
+		System.out.println("Log body :: ");
 		System.out.println(get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().log().body());
+		
+		System.out.println("Log Everything:: ");
+		System.out.println(get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().log().everything());
+		
+		System.out.println("Log when status matches: ");
+		System.out.println(get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().log().ifStatusCodeIsEqualTo(200));
+		
+		System.out.println("Log when status matches: ");
+		System.out.println(get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().log());
+		
 	}
 
 
