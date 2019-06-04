@@ -432,25 +432,26 @@ public void test11() {
 	
 
   Q 6. Explore the usage of below:
-	 :heavy_check_mark: using()
+  
+	:ballot_box_with_check: using()
 		
-	 :heavy_check_mark: statusLine()
+	:ballot_box_with_check:: statusLine()
 		
-	 :heavy_check_mark: appendRoot()
+	:ballot_box_with_check: appendRoot()
 		
-	 :heavy_check_mark: defaultParser()
+	:ballot_box_with_check: defaultParser()
 		
-	 :heavy_check_mark: detachRoot()
+	:ballot_box_with_check: detachRoot()
 		
-	 :heavy_check_mark: noRoot()
+	:ballot_box_with_check: noRoot()
 		
-	 :heavy_check_mark: noRootPath()
+	:ballot_box_with_check: noRootPath()
 		
-	 :heavy_check_mark: parser()
+	:ballot_box_with_check: parser()
 		
-	 :heavy_check_mark: spec()
+	:ballot_box_with_check: spec()
 		
-	 :heavy_check_mark: specification()
+	:ballot_box_with_check: specification()
 	
   
 --------------------------------------------------------------------------------
