@@ -432,27 +432,26 @@ public void test11() {
 	
 
   Q 6. Explore the usage of below:
-	```
-	a. using()
+	- using()
 		
-	b. statusLine()
+	- statusLine()
 		
-	c. appendRoot()
+	- appendRoot()
 		
-	d. defaultParser()
+	- defaultParser()
 		
-	e. detachRoot()
+	- detachRoot()
 		
-	f. noRoot()
+	- noRoot()
 		
-	g. noRootPath()
+	- noRootPath()
 		
-	h. parser()
+	- parser()
 		
-	i. spec()
+	- spec()
 		
-	j. specification()
-	```
+	- specification()
+	
   
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
