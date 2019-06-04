@@ -431,7 +431,7 @@ public void test11() {
 	>	get("/something").then().assertThat().body(containsString("OK")).body(containsString("something else"));
 	
 
-  Q 6. Explore the usage of below\ :cyclone: using()\ :cyclone: statusLine()\ :cyclone: appendRoot()\  :cyclone: defaultParser()\ :cyclone: detachRoot()\  :cyclone: noRoot()\  :cyclone: noRootPath()\ :cyclone: parser()\ :cyclone: spec()\ :cyclone: specification()
+  Q 6. Explore the usage of below \ :cyclone: using() \ :cyclone: statusLine() \ :cyclone: appendRoot() \  :cyclone: defaultParser() \ :cyclone: detachRoot() \  :cyclone: noRoot() \  :cyclone: noRootPath() \ :cyclone: parser() \ :cyclone: spec() \ :cyclone: specification()
 	
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
