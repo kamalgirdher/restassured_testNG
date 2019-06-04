@@ -425,13 +425,21 @@ public void test11() {
   Q 5. What is difference b/w below statements?
   
 	>	get("/something").then().assertThat().body(containsString("OK")).and().body(containsString("something else"));		
-		
-		and
-		
+	and
 	>	get("/something").then().assertThat().body(containsString("OK")).body(containsString("something else"));
 	
 
-  Q 6. Explore the usage of below <br/>  :page_facing_up: using() <br/>  :page_facing_up: statusLine() <br/>  :page_facing_up: appendRoot() <br/>   :page_facing_up: defaultParser() <br/> :page_facing_up: detachRoot() <br/>  :page_facing_up: noRoot() <br/>  :page_facing_up: noRootPath() <br/> :page_facing_up: parser() <br/> :page_facing_up: spec() <br/> :page_facing_up: specification()
+  Q 6. Explore the usage of below<br/>
+		using()<br/>
+		statusLine()<br/>
+		appendRoot()<br/>
+		defaultParser()<br/>
+		detachRoot()<br/>
+		noRoot()<br/>
+		noRootPath()<br/>
+		parser()<br/>
+		spec()<br/>
+		specification()
 	
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
