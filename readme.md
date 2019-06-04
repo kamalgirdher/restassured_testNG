@@ -433,14 +433,23 @@ public void test11() {
 
   Q 6. Explore the usage of below:
 		a. using()
+		
 		b. statusLine()
+		
 		c. appendRoot()
+		
 		d. defaultParser()
+		
 		e. detachRoot()
+		
 		f. noRoot()
+		
 		g. noRootPath()
+		
 		h. parser()
+		
 		i. spec()
+		
 		j. specification()
 
   
