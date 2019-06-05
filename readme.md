@@ -414,8 +414,9 @@ public void test11() {
   Q 1. What is RequestSpecBuilder?
 
   Q 2. What is difference between .body() and .content()?
-	get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().body(...)
-	get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().content(...)
+ > get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().body(...)
+	
+ > get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().content(...)
 
   Q 3. Write a use case where we use .log() function for verification using restassured.
 	get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().log()
@@ -424,9 +425,9 @@ public void test11() {
   
   Q 5. What is difference b/w below statements?
   
-	>	get("/something").then().assertThat().body(containsString("OK")).and().body(containsString("something else"));		
+ >	get("/something").then().assertThat().body(containsString("OK")).and().body(containsString("something else"));		
 	and
-	>	get("/something").then().assertThat().body(containsString("OK")).body(containsString("something else"));
+ >	get("/something").then().assertThat().body(containsString("OK")).body(containsString("something else"));
 	
 
   Q 6. Explore the usage of below<br/>
