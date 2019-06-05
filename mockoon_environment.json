@@ -1,7 +1,7 @@
 {
     "id": "mockoon_export",
     "appVersion": "1.4.0",
-    "checksum": "75552c0cf1662efebe302a2e44521913",
+    "checksum": "dded10bb9a0917dc687cee1ec9605ba4",
     "subject": "environment",
     "data": {
         "uuid": "d0ba9ed0-82ba-11e9-a399-1b2bce49c108",
@@ -20,8 +20,16 @@
                 "statusCode": "200",
                 "headers": [
                     {
-                        "key": "",
-                        "value": ""
+                        "key": "myHeader",
+                        "value": "kamal"
+                    },
+                    {
+                        "key": "secondHeader",
+                        "value": "second"
+                    },
+                    {
+                        "key": "thirdHeader",
+                        "value": "third"
                     }
                 ],
                 "filePath": "",
@@ -73,6 +81,27 @@
                     {
                         "key": "Content-Type",
                         "value": "application/xml"
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "755c1b80-8743-11e9-94aa-b1fd2f8248eb",
+                "documentation": "",
+                "method": "post",
+                "endpoint": "post_200_With_Header",
+                "body": "{\n\"fname\":\"kamal\",\n\"lname\":\"girdher\",\n\"website1\":\"https://extremeExcel.com\",\n\"website2\":\"https://megettingerror.blogspot.com\"\n}",
+                "latency": 0,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "user",
+                        "value": "kamal"
                     }
                 ],
                 "filePath": "",

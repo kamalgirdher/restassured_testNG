@@ -440,21 +440,49 @@ public void test11() {
 		parser()<br/>
 		spec()<br/>
 		specification()
+		
+  Q 7. What is ResponseSpecBuilder?
 	
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 
 
+## RequestSpecBuilder
+
+Suppose that you have lot of API tests and all requier a header information. Instead of having to write this into the test each time, you can use RequestSpecBuilder.
+
+### Test 17
+```java	
+	public void test17() {
+		RequestSpecBuilder builder= new RequestSpecBuilder();
+		RequestSpecification requestSpec;
+		builder.addHeader("Content-Type","application/json");
+		builder.addParam("user","Kamal");
+		requestSpec = builder.build();
+		
+		given().spec(requestSpec).when().post("http://localhost:3000/post_200_With_Header").then().body("lname",equalTo("girdher"));
+	}
+
+```
 
 
+## ResponseSpecBuilder
 
+Again, if you have a number of API tests. It is quite reasonable to check the response code 200 of every call. Instead of having to write this into the test each time, you can use ResponseSpecBuilder.
 
-
-
-
-
-
+### Test 18
+```java
+	public void test18() {
+		ResponseSpecBuilder builder= new ResponseSpecBuilder();
+		ResponseSpecification responseSpec;
+		builder.expectStatusCode(200);
+		builder.expectBody("fname",equalTo("kamal"));
+		responseSpec = builder.build();
+		
+		given().post("http://localhost:3000/post_200_With_Header").then().spec(responseSpec);
+	}
+```
 
 
 

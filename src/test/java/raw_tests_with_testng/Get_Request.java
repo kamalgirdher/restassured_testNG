@@ -7,13 +7,15 @@ import org.hamcrest.Matchers.*;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.Cookie;
 import io.restassured.http.Cookies;
 import io.restassured.matcher.*;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 
-public class Test_requests {
+public class Get_Request {
 
 	/* 
 	 * ### Test 1. given() get() then() statusCode(int)
@@ -290,7 +292,6 @@ public class Test_requests {
 		System.out.println(get("http://localhost:3000/get_200_OK_SIMPLE_BODY_MESSAGE").then().log());
 		
 	}
-
 
 	
 }
