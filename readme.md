@@ -44,7 +44,8 @@ public void test1() {
 
 ### Test 2. given()  get()  then()  statusCode(Matcher)
 > Note :  Use this import for equalsTo : import static org.hamcrest.CoreMatchers.equalsTo;
-
+          See more about [Matchers here](http://hamcrest.org/JavaHamcrest/javadoc/1.3/org/hamcrest/Matchers.html).
+		  
   #### API response : get_200_OK_SIMPLE_BODY_MESSAGE
 	{Operation Successful!}
 
